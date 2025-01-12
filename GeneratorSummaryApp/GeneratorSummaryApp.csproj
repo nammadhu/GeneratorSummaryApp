@@ -5,13 +5,32 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PublishAot>true</PublishAot>
-    <InvariantGlobalization>true</InvariantGlobalization>
     <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Outputs\**" />
+    <EmbeddedResource Remove="Data\Outputs\**" />
+    <None Remove="Data\Outputs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\ReferenceData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Inputs\Processed\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GeneratorSummaryApp.Common\GeneratorSummaryApp.Common.csproj" />
   </ItemGroup>
 
 </Project>
