@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace GeneratorSummaryApp
 {
-    //works on windows,linux and console and docker
+    //works with locally accessible files on windows,linux and console and docker
     public partial class Program
     {
         public static ReferenceData? referenceData { get; private set; }
@@ -30,6 +30,7 @@ namespace GeneratorSummaryApp
 
         private static void LoadConfiguration()
         {
+            //for remote input or output folder need to add httpclient and upload/download more logic
             inputFolder = ConfigurationManager.AppSettings["InputFolder"]!;
             outputFolder = ConfigurationManager.AppSettings["OutputFolder"]!;
             string referenceDataFile = ConfigurationManager.AppSettings["ReferenceDataFile"] ??
