@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/GeneratorSummaryApp/Data/Inputs/Processed/01-Basic-20250112141132.xml
