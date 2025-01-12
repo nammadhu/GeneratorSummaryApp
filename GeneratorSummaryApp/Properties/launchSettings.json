@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GeneratorSummaryApp": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
